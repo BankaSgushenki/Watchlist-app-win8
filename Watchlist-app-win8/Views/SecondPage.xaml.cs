@@ -56,6 +56,8 @@ namespace Watchlist_app_win8.Views
             this.navigationHelper.SaveState += navigationHelper_SaveState;
 
             userName.Text = LoginClass.currentUser.name;
+            tempText.Text = LoginClass.currentUser.lists[0].title;
+            //tempText.Text = LoginClass.currentUser.jsonString;
         }
 
         /// <summary>

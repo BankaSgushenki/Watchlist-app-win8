@@ -27,6 +27,7 @@ namespace Watchlist_app_win8.Logic
         {
             jsonString = jsonString.Substring(1, jsonString.Length - 2);
             User CurrentUser = JsonConvert.DeserializeObject<User>(jsonString);
+            CurrentUser.jsonString = jsonString;
             return CurrentUser;
         }
 

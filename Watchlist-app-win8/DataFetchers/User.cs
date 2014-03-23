@@ -17,6 +17,15 @@ namespace Watchlist_app_win8.DataFetchers
             public string id { get; set; }
             public string name { get; set; }
             public string password { get; set; }
-            public string email { get; set; } 
+            public string email { get; set; }
+            public string jsonString { get; set; }
+            public list[] lists { get; set; }
     }
+
+    public class list
+    {
+        public string[] movies { get; set; }
+        public string title { get; set; }
+
+    }               
 }
