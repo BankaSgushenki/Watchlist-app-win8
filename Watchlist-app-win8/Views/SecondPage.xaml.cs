@@ -1,20 +1,10 @@
 ﻿using Watchlist_app_win8.Common;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Popups;
+using System.Collections.ObjectModel;
 
+using Watchlist_app_win8.DataFetchers;
 using Watchlist_app_win8.Logic;
 
 // Документацию по шаблону элемента "Основная страница" см. по адресу http://go.microsoft.com/fwlink/?LinkId=234237
@@ -27,6 +17,7 @@ namespace Watchlist_app_win8.Views
     public sealed partial class SecondPage : Page
     {
 
+        private ObservableCollection<list> _lists = new ObservableCollection<list>();
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -55,9 +46,11 @@ namespace Watchlist_app_win8.Views
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
 
-            userName.Text = LoginClass.currentUser.name;
-            tempText.Text = LoginClass.currentUser.lists[0].title;
-            //tempText.Text = LoginClass.currentUser.jsonString;
+            foreach (var value in LoginClass.currentUser.lists)
+                _lists.Add(value);           
+
+            userName.Text = LoginClass.currentUser.name;           
+            lists.ItemsSource = _lists;
         }
 
         /// <summary>

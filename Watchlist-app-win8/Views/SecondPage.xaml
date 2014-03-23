@@ -49,6 +49,41 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Foreground="Black"/>
             <TextBlock x:Name="userName" Grid.Column="1" HorizontalAlignment="Left" Margin="1356,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="57" Width="279" FontSize="20" Foreground="White"/>
         </Grid>
-        <TextBox x:Name="tempText" HorizontalAlignment="Left" Margin="137,63,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="610" Width="679"/>
+
+        <GridView x:Name="lists" IsEnabled="True" Opacity="1"  VerticalAlignment="Bottom" Padding="116,37,40,46"  Foreground="#FF403D3D" BorderBrush="Black" Background="#FF464343" HorizontalAlignment="Left" Width="1920" Height="150" Margin="0,0,0,790" Grid.Row="1">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Right" Width="200" Height="100">
+                        <Border Background="{StaticResource 
+                 ListViewItemPlaceholderBackgroundThemeBrush}">
+                            <Image Source="{Binding fullPosterPath}"  VerticalAlignment="Top" HorizontalAlignment="Left"      Stretch="None"/>
+                        </Border>
+
+                        <StackPanel VerticalAlignment="Top"
+                            Height="100"
+                            Background="{StaticResource                  
+                            ListViewItemOverlayBackgroundThemeBrush}">
+
+                            <TextBlock Text="{Binding title}"
+                            FontSize="24"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center"
+                            Foreground="{StaticResource                                           
+                            ListViewItemOverlayForegroundThemeBrush}"                                   
+                            Margin="15,0,15,0"/>
+
+                        </StackPanel>
+
+
+
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+
+        </GridView>
+
     </Grid>
+
+
+
 </Page>
