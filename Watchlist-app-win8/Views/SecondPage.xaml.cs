@@ -51,6 +51,12 @@ namespace Watchlist_app_win8.Views
 
             userName.Text = LoginClass.currentUser.name;           
             lists.ItemsSource = _lists;
+
+            foreach (var value in LoginClass.currentUser.lists[0].movies)
+            {
+                temp.Text += value + " ";
+            }
+
         }
 
         /// <summary>

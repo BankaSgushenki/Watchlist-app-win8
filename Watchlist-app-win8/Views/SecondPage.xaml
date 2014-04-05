@@ -81,6 +81,7 @@
             </GridView.ItemTemplate>
 
         </GridView>
+        <TextBox x:Name="temp" HorizontalAlignment="Left" Margin="171,173,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.493,0.5" Height="448" Width="729"/>
 
     </Grid>
 

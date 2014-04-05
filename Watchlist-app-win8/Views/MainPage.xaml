@@ -90,11 +90,11 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,50" HorizontalAlignment="Center">
                         <TextBlock Text="User Name" Margin="10" Foreground="White" FontSize="25" />
-                        <TextBox x:Name="id"  Height="40" Margin="13,1" Width="408"/>
+                        <TextBox x:Name="id" Text="Dmitry Mazuro"  Height="40" Margin="13,1" Width="408"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="Password" Foreground="White"  FontSize="25" />
-                        <PasswordBox  x:Name="pwd"  Height="40" Margin="5,1"  Width="408"/>
+                        <PasswordBox  x:Name="pwd" Password="12345"  Height="40" Margin="5,1"  Width="408"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,50" HorizontalAlignment="Center">
                         <Button x:Name="loginclick" Click="loginClick" Foreground="Wheat"   Width="100" Content="Login" ></Button>

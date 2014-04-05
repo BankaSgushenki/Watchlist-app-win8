@@ -26,6 +26,5 @@ namespace Watchlist_app_win8.DataFetchers
     {
         public string[] movies { get; set; }
         public string title { get; set; }
-
     }               
 }
